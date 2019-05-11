@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'food-and-health-website';
+  title = 'Food & Health';
+  data = 'info';
+  constructor() {
+
+  }
+
 }
