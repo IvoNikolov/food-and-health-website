@@ -8,8 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Food & Health';
   data = 'info';
+  loadedFeature = 'recipe';
   constructor() {
 
+  }
+
+  onNavigate(feature: string) {
+    this.loadedFeature = feature;
   }
 
 }
