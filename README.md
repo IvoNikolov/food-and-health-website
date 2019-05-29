@@ -2,11 +2,11 @@
 
 Single-page-application for recipes and healthy lifestyle
 
-# Description
+# Description:
 
 Frameworks: Angular 7 |
 
-Languages: Typescript |
+Language: Typescript |
 
 Style Sheet Language: CSS
 
