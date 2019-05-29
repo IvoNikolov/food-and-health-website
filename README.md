@@ -4,9 +4,9 @@ Single-page-application for recipes and healthy lifestyle
 
 # Description:
 
-Frameworks: Angular 7 |
+Frameworks: Angular 7
 
-Language: Typescript |
+Language: Typescript
 
 Style Sheet Language: CSS
 
