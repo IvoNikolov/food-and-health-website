@@ -9,24 +9,19 @@ import { RecipeItemComponent } from './../recipes/recipe-list/recipe-item/recipe
 import { RecipeStartComponent } from './../recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './../recipes/recipe-edit/recipe-edit.component';
 import { RecipesRoutingModule } from './recipes-routing.module';
+import { RecipesComponent } from './recipes.component';
 
 
 @NgModule({
     declarations: [
+        RecipesComponent,
         RecipeListComponent,
         RecipeDetailComponent,
         RecipeItemComponent,
         RecipeStartComponent,
         RecipeEditComponent,
     ],
-    imports: [RouterModule, CommonModule, ReactiveFormsModule, RecipesRoutingModule],
-    exports: [
-        RecipeListComponent,
-        RecipeDetailComponent,
-        RecipeItemComponent,
-        RecipeStartComponent,
-        RecipeEditComponent,
-    ]
+    imports: [RouterModule, CommonModule, ReactiveFormsModule, RecipesRoutingModule]
 })
 
 export class RecipesModule {
