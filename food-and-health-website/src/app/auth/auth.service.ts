@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { catchError, tap } from 'rxjs/operators';
-import { throwError, BehaviorSubject } from 'rxjs';
+import { throwError, BehaviorSubject, from } from 'rxjs';
 import { User } from './user.model';
+import { environment } from '../../environments/environment';
+
 
 export interface AuthResponseData {
     kind: string;
@@ -18,6 +20,8 @@ export interface AuthResponseData {
 @Injectable({providedIn: 'root'})
 export class AuthService {
 
+    environment
+
     user = new BehaviorSubject<User>(null);
 
     private tokenExpirationTimer: any;
@@ -28,7 +32,7 @@ export class AuthService {
 
     signup(email: string, password: string) {
         return this.http.post<AuthResponseData>(
-            'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyCjrXVAPdtyXt86JKnpNTj8xdCP-zrY708',
+            'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=' + environment.fireBaseAPIKey,
             {
                 email: email,
                 password: password,
@@ -41,7 +45,7 @@ export class AuthService {
 
     login(email: string, password: string) {
        return this.http.post<AuthResponseData>(
-           'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyCjrXVAPdtyXt86JKnpNTj8xdCP-zrY708',
+           'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=' + environment.fireBaseAPIKey,
             {
                 email: email,
                 password: password,
