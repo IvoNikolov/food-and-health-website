@@ -1,6 +1,11 @@
 import { Ingredient } from '../shared/ingredient.model';
 import { Subject } from 'rxjs';
 
+/*
+  Shopping-list service is 
+  not used because of the implementation of ngRx
+*/
+
 export class ShoppingListService {
   ingredientsChanged = new Subject<Ingredient[]>();
   startedEditing = new Subject<number>();
