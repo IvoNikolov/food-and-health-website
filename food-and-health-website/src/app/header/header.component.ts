@@ -7,8 +7,6 @@ import { AuthService } from '../auth/auth.service';
 import { Store } from '@ngrx/store';
 import * as fromApp from './../store/app.reducer';
 
-
-
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html'
