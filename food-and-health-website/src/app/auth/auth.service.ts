@@ -29,7 +29,7 @@ export class AuthService {
     constructor(private http: HttpClient, private router: Router, private store: Store<fromApp.AppState>) {
 
     }
-
+    /*
     signup(email: string, password: string) {
         return this.http.post<AuthResponseData>(
             'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=' + environment.fireBaseAPIKey,
@@ -47,14 +47,15 @@ export class AuthService {
        return this.http.post<AuthResponseData>(
            'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=' + environment.fireBaseAPIKey,
             {
-                email: email,
-                password: password,
+                email,
+                password,
                 returnSecureToken: true
             }
        ).pipe(catchError(this.handleError), tap(resData => {
             this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn);
        }));
     }
+    */
 
     autoLogin() {
         const userData: {
@@ -85,7 +86,7 @@ export class AuthService {
     logout() {
         // this.user.next(null);
         this.store.dispatch(new AuthActions.Logout());
-        this.router.navigate(['/auth']);
+        // this.router.navigate(['/auth']);
         localStorage.removeItem('userData');
         if (this.tokenExpirationTimer) {
             clearTimeout(this.tokenExpirationTimer);
