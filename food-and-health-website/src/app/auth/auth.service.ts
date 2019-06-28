@@ -55,7 +55,6 @@ export class AuthService {
             this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn);
        }));
     }
-    */
 
     autoLogin() {
         const userData: {
@@ -93,14 +92,24 @@ export class AuthService {
         }
 
         this.tokenExpirationTimer = null;
-    }
+    }W
+    */
 
-    autoLogout(expirationDuration: number) {
+    setLogoutTimer(expirationDuration: number) {
         this.tokenExpirationTimer = setTimeout(() => {
-            this.logout();
+            // this.logout();
+            this.store.dispatch(new AuthActions.Logout());
         }, expirationDuration);
     }
 
+    clearLogoutTimer() {
+        if (this.tokenExpirationTimer) {
+            clearTimeout(this.tokenExpirationTimer);
+            this.tokenExpirationTimer = null;
+        }
+    }
+
+    /*
     private handleAuthentication(email: string, userId: string, token: string, expiresIn: number) {
         const expirationDate = new Date(new Date().getTime() + (expiresIn * 1000));
         const user = new User(email, userId, token, expirationDate);
@@ -135,4 +144,5 @@ export class AuthService {
             return throwError(errorMessage);
         }
     }
+    */
 }
