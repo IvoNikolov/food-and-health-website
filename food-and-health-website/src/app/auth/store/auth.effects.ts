@@ -140,7 +140,7 @@ export class AuthEffects {
             if (loadedUser.token) {
                 const expirationDuration =  new Date(userData._tokenExpirationDate).getTime() - new Date().getTime();
                 // this.user.next(loadedUser);
-                this.authService.setLogoutTimer(expirationDuration);
+                this.authService.setLogoutTimer(expirationDuration * 1000);
                 return new AuthActions.AuthenticateSuccess({
                     email: loadedUser.email,
                     userId: loadedUser.id,
