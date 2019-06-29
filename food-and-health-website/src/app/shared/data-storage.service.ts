@@ -10,6 +10,10 @@ import { Store } from '@ngrx/store';
 
 @Injectable({providedIn: 'root'})
 
+/*
+    Not used, replaced by NgRx
+*/
+
 export class DataStorageService {
     constructor(private http: HttpClient,
                 private recipeService: RecipeService,
